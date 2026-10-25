@@ -54,6 +54,7 @@ button, input, select, textarea { font: inherit; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 17px; color: #a27a2d; font-size: 10px; font-weight: 700; letter-spacing: 1.25px; line-height: 1.4; }
 .eyebrow > span { width: 26px; height: 1px; background: var(--gold); }
 .eyebrow-light { color: var(--gold-light); }
+.hero-brand { margin: 0 0 10px; color: var(--gold-light); font: 800 18px/19.6px var(--display); letter-spacing: 3px; }
 .hero h1 { max-width: 720px; margin: 0; font: 700 clamp(42px, 6vw, 72px)/1.08 var(--display); letter-spacing: 0; }
 h1 em, h2 em { color: var(--gold); font-style: normal; }
 .hero-lead { max-width: 515px; margin: 23px 0 27px; color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.8; }
@@ -225,6 +226,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .hero-shade { background: linear-gradient(90deg, rgba(9,25,42,.95), rgba(9,25,42,.76)), linear-gradient(0deg, rgba(9,25,42,.38), transparent); }
   .hero-content { padding-block: 76px 88px; }
   .eyebrow { margin-bottom: 14px; font-size: 9px; letter-spacing: 1px; }
+  .hero-brand { font: 800 15px/16.8px var(--display); letter-spacing: 2.5px; }
   .hero h1 { font-size: clamp(39px, 11vw, 56px); }
   .hero-lead { max-width: 420px; margin: 19px 0 22px; font-size: 14px; line-height: 1.75; }
   .hero-actions { display: grid; max-width: 340px; }
