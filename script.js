@@ -55,3 +55,50 @@ document.querySelector("#contact-form").addEventListener("submit", (event) => {
 });
 
 document.querySelector("#current-year").textContent = new Date().getFullYear();
+
+function initScrollAnimations() {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion || !("IntersectionObserver" in window)) return;
+
+  const revealSelectors = [
+    ".section-heading .eyebrow",
+    ".section-heading h2",
+    ".section-heading > p:last-child",
+    ".trust-grid > div",
+    ".services-grid .service-card",
+    ".why-intro",
+    ".benefit-grid .benefit",
+    ".process-list li",
+    ".about-image",
+    ".about-copy",
+    ".faq-intro",
+    ".faq-list",
+    ".contact-copy",
+    ".contact-form"
+  ];
+
+  revealSelectors.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      element.classList.add("scroll-reveal");
+    });
+  });
+  document.querySelector(".about-image")?.classList.add("scroll-reveal-media");
+
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      currentObserver.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -35px 0px"
+  });
+
+  document.querySelectorAll(".scroll-reveal").forEach((element) => {
+    observer.observe(element);
+  });
+  document.documentElement.classList.add("motion-ready");
+}
+
+initScrollAnimations();

@@ -306,3 +306,59 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+html.motion-ready .scroll-reveal { --reveal-delay: 0ms; opacity: 0; transform: translate3d(0, 30px, 0); transition: opacity .7s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay), transform .7s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay); }
+html.motion-ready .scroll-reveal.is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
+html.motion-ready .scroll-reveal-media { transform: translate3d(0, 22px, 0) scale(.98); }
+html.motion-ready .scroll-reveal-media.is-visible { transform: translate3d(0, 0, 0) scale(1); }
+html.motion-ready .services-section .service-card.scroll-reveal { transition: opacity .7s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay), transform .7s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay), box-shadow .3s ease; }
+html.motion-ready .services-section .service-card.scroll-reveal.is-visible:hover { transform: translateY(-4px); }
+html.motion-ready .services-grid .service-card:nth-child(2),
+html.motion-ready .trust-grid > div:nth-child(2),
+html.motion-ready .benefit-grid .benefit:nth-child(2) { --reveal-delay: 90ms; }
+html.motion-ready .services-grid .service-card:nth-child(3),
+html.motion-ready .trust-grid > div:nth-child(3),
+html.motion-ready .benefit-grid .benefit:nth-child(3) { --reveal-delay: 180ms; }
+html.motion-ready .services-grid .service-card:nth-child(4),
+html.motion-ready .trust-grid > div:nth-child(4),
+html.motion-ready .benefit-grid .benefit:nth-child(4) { --reveal-delay: 270ms; }
+html.motion-ready .services-grid .service-card:nth-child(5),
+html.motion-ready .benefit-grid .benefit:nth-child(5) { --reveal-delay: 360ms; }
+html.motion-ready .benefit-grid .benefit:nth-child(6) { --reveal-delay: 450ms; }
+html.motion-ready .process-list li:nth-child(2) { --reveal-delay: 100ms; }
+html.motion-ready .process-list li:nth-child(3) { --reveal-delay: 200ms; }
+html.motion-ready .process-list li:nth-child(4) { --reveal-delay: 300ms; }
+html.motion-ready .section-heading h2 { --reveal-delay: 70ms; }
+html.motion-ready .section-heading > p:last-child { --reveal-delay: 140ms; }
+html.motion-ready .hero h1,
+html.motion-ready .hero-lead,
+html.motion-ready .hero-actions { animation: hero-content-enter .72s cubic-bezier(.22, 1, .36, 1) both; }
+html.motion-ready .hero h1 { animation-delay: 120ms; }
+html.motion-ready .hero-lead { animation-delay: 280ms; }
+html.motion-ready .hero-actions { animation-delay: 440ms; }
+
+@keyframes hero-content-enter {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 640px) {
+  html.motion-ready .scroll-reveal { transform: translate3d(0, 20px, 0); transition-duration: .6s; }
+  html.motion-ready .services-section .service-card.scroll-reveal { transition: opacity .6s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay), transform .6s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay), box-shadow .3s ease; }
+  html.motion-ready .scroll-reveal.is-visible { transform: translate3d(0, 0, 0); }
+  html.motion-ready .scroll-reveal-media { transform: translate3d(0, 16px, 0) scale(.985); }
+  html.motion-ready .scroll-reveal-media.is-visible { transform: translate3d(0, 0, 0) scale(1); }
+  html.motion-ready .hero h1,
+  html.motion-ready .hero-lead,
+  html.motion-ready .hero-actions { animation-duration: .62s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready .scroll-reveal,
+  html.motion-ready .scroll-reveal.is-visible,
+  html.motion-ready .scroll-reveal-media,
+  html.motion-ready .scroll-reveal-media.is-visible { opacity: 1; transform: none; transition: none; }
+  html.motion-ready .hero h1,
+  html.motion-ready .hero-lead,
+  html.motion-ready .hero-actions { animation: none; }
+}
