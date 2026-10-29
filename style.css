@@ -12,7 +12,7 @@
   --line: #e1e5e7;
   --sans: "DM Sans", sans-serif;
   --display: "Manrope", sans-serif;
-  --hero-image: url("assets/hero-hali.png");
+  --hero-image: url("assets/hero-hali.webp");
 }
 
 * { box-sizing: border-box; }
@@ -215,8 +215,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .menu-toggle { display: block; margin-left: auto; }
   .primary-nav { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 22px 18px; background: rgba(11,27,45,.97); border-bottom: 1px solid rgba(255,255,255,.15); box-shadow: 0 16px 25px rgba(0,0,0,.2); }
   .primary-nav.is-open { display: grid; }
-  .primary-nav > a:not(.button) { padding: 11px 4px; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 13px; }
-  .primary-nav .nav-call { margin-top: 12px; }
+  .primary-nav > a:not(.button) { min-height: 44px; padding: 12px 4px; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 13px; }
+  .primary-nav .nav-call { min-height: 44px; margin-top: 12px; }
   .hero { min-height: 625px; }
   .hero-photo { left: 12%; }
   .hero-shade { background: linear-gradient(90deg, rgba(9,25,42,.97), rgba(9,25,42,.76) 63%, rgba(9,25,42,.45)); }
@@ -237,10 +237,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   body { padding-bottom: 62px; font-size: 14px; }
   .container { width: calc(100% - 40px); }
   .header-inner { min-height: 84px; gap: 12px; }
+  .menu-toggle { height: 44px; }
   .brand { gap: 8px; }
   .brand-image { height: 70px; max-width: 190px; }
   .brand-slogan { display: none; }
-  .hero { min-height: 660px; min-height: min(720px, 100svh); }
+  .hero { min-height: min(660px, 100svh); }
   .hero-photo { inset: 0; background-position: 57% center; }
   .hero-shade { background: linear-gradient(90deg, rgba(9,25,42,.95), rgba(9,25,42,.76)), linear-gradient(0deg, rgba(9,25,42,.38), transparent); }
   .hero-content { padding-block: 76px 88px; transform: translateY(68px); }
@@ -292,13 +293,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .faq-intro > p:not(.eyebrow) { margin-top: 12px; }
   .faq-list summary { padding-block: 16px; font-size: 12px; }
   .faq-list details p { font-size: 11px; }
+  .about-copy .text-link, .faq-intro .text-link { min-height: 44px; }
   .contact-layout { grid-template-columns: 1fr; gap: 36px; }
   .contact-copy h2 { font-size: 40px; }
   .contact-copy > p:not(.eyebrow) { font-size: 13px; }
   .contact-form { padding: 24px 20px; }
+  .contact-form input, .contact-form select, .contact-form textarea { min-height: 44px; }
   .contact-form h3 { font-size: 18px; }
   .footer-main { grid-template-columns: 1fr; gap: 30px; padding-block: 42px 35px; }
   .footer-brand { grid-column: auto; }
+  .footer-column a { min-height: 44px; display: flex; align-items: center; }
   .brand-footer .brand-image { height: 90px; max-width: 250px; }
   .footer-bottom { min-height: 62px; display: grid; justify-content: start; gap: 8px; padding-block: 16px; font-size: 10px; }
   .mobile-contact { position: fixed; z-index: 60; right: 0; bottom: 0; left: 0; display: grid; grid-template-columns: 1fr 1fr; min-height: 62px; padding-bottom: env(safe-area-inset-bottom); background: var(--white); box-shadow: 0 -5px 22px rgba(10,27,45,.18); }
